@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project>
+  <executable name="dist/default/debug/lora-soil-moisture-sensor-liion.X.debug.elf">
+    <memory name="program">
+      <units>bytes</units>
+      <length>131072</length>
+      <used>16924</used>
+      <free>114148</free>
+    </memory>
+    <memory name="data">
+      <units>bytes</units>
+      <length>16384</length>
+      <used>760</used>
+      <free>15624</free>
+    </memory>
+  </executable>
+</project>
