@@ -142,7 +142,12 @@ void SYS_Initialize ( void* data )
 
     SERCOM0_SPI_Initialize();
 
+    ADC_Initialize();
+    EIC_Initialize();
+
     RTC_Initialize();
+
+    TC3_TimerInitialize();
 
 
 

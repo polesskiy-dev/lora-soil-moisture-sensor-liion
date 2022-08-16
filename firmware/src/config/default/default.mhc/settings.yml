@@ -5,7 +5,7 @@ frameworkPath: ../../Harmony3
 processor: ATSAMD21E17D
 projectName: lora-soil-moisture-sensor-liion
 settings:
-  PackageFilter: crypto;core_apps_sam_d21_da1;dev_packs;net;core;bootloader;csp_apps_sam_d21_da1;bsp;usb;csp;Devices
+  PackageFilter: crypto;core_apps_sam_d21_da1;dev_packs;net;core;bootloader;csp_apps_sam_d21_da1;bsp;quick_docs;usb;csp;harmony-services;Devices
   FORCE_OPTIMIZATION: 'false'
   GENERATE_BACKUP: 'true'
   TRUSTZONE: 'false'

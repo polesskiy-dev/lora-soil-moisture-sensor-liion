@@ -78,7 +78,13 @@ build/default/production/_ext/1171490990/initialization.o: \
  ../src/config/default/peripheral/port/plib_port.h \
  ../src/config/default/peripheral/clock/plib_clock.h \
  ../src/config/default/peripheral/nvic/plib_nvic.h \
- ../src/config/default/peripheral/rtc/plib_rtc.h
+ ../src/config/default/peripheral/pm/plib_pm.h \
+ ../src/config/default/peripheral/adc/plib_adc.h \
+ ../src/config/default/peripheral/adc/plib_adc_common.h \
+ ../src/config/default/peripheral/eic/plib_eic.h \
+ ../src/config/default/peripheral/rtc/plib_rtc.h \
+ ../src/config/default/peripheral/tc/plib_tc3.h \
+ ../src/config/default/peripheral/tc/plib_tc_common.h
 
 ../src/config/default/definitions.h:
 
@@ -238,4 +244,16 @@ build/default/production/_ext/1171490990/initialization.o: \
 
 ../src/config/default/peripheral/nvic/plib_nvic.h:
 
+../src/config/default/peripheral/pm/plib_pm.h:
+
+../src/config/default/peripheral/adc/plib_adc.h:
+
+../src/config/default/peripheral/adc/plib_adc_common.h:
+
+../src/config/default/peripheral/eic/plib_eic.h:
+
 ../src/config/default/peripheral/rtc/plib_rtc.h:
+
+../src/config/default/peripheral/tc/plib_tc3.h:
+
+../src/config/default/peripheral/tc/plib_tc_common.h:

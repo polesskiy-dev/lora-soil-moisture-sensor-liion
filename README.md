@@ -4,8 +4,8 @@
 ### Hardware includes:
 * SAMD21E17D MCU
 * LoRa Ra-02 module (Semtech SX1278)
-* AT25DF SPI Flash memory
-* SHT21 temperature/humidity I2C sensor
+* AT25DF SPI EEPROM memory
+* SHT20 environment temperature/humidity I2C sensor
 * 2x3.7 LiIon batteries
 * MAX1626 DC-DC
 
@@ -13,15 +13,18 @@
 * [x] RTC
 * [ ] Measure temperature/humidity
 * [ ] Measure Battery voltage
-* [ ] Log data in SPI Flash
-* [ ] Transfer data through LoRa
+* [ ] Log data in SPI EEPROM
+* [ ] Transfer environment data through LoRa
 * [ ] Fetch commands through LoRa
   * [ ] transfer environment data
   * [ ] adjust RTC
   * [ ] transfer logs
-* [ ] Low power - sleep between operations
-* [ ] Wake up by RTC alarm
-* [ ] Wake up by LoRa Interrupt
+  * [ ] compress and transfer logs (zLib)
+* [ ] Low power consumption
+  * [ ] Wake up by RTC alarm
+  * [ ] Wake up by LoRa Interrupt
+  * [ ] DMA I2C read
+  * [ ] DMA SPI LoRa read
 * [ ] Debug LED self-test
 
 ### Installation
