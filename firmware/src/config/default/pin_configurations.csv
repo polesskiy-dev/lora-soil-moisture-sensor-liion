@@ -15,8 +15,8 @@
 16,PA15,,Available,,,,,,NORMAL
 17,PA16,,Available,,,,,,NORMAL
 18,PA17,,Available,,,,,,NORMAL
-19,PA18,RESET_LoRa,GPIO,Digital,High Impedance,n/a,No,No,NORMAL
-20,PA19,IRQ_LoRa,EIC_EXTINT3,Digital,High Impedance,n/a,No,No,NORMAL
+19,PA18,RESET_LoRa,GPIO,Digital,Out,High,,,NORMAL
+20,PA19,IRQ_LoRa,EIC_EXTINT3,Digital,High Impedance,n/a,No,Yes,NORMAL
 21,PA22,SDA,SERCOM3_PAD0,Digital,High Impedance,n/a,No,No,NORMAL
 22,PA23,SCL,SERCOM3_PAD1,Digital,High Impedance,n/a,No,No,NORMAL
 23,PA24,STATUS_LED,GPIO,Digital,Out,High,,,STRONG

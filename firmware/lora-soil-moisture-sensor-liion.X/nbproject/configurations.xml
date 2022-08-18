@@ -45,6 +45,9 @@
                 <itemPath>../src/config/default/peripheral/sercom/spi_master/plib_sercom_spi_master_common.h</itemPath>
               </logicalFolder>
             </logicalFolder>
+            <logicalFolder name="f12" displayName="systick" projectFiles="true">
+              <itemPath>../src/config/default/peripheral/systick/plib_systick.h</itemPath>
+            </logicalFolder>
             <logicalFolder name="f11" displayName="tc" projectFiles="true">
               <itemPath>../src/config/default/peripheral/tc/plib_tc_common.h</itemPath>
               <itemPath>../src/config/default/peripheral/tc/plib_tc3.h</itemPath>
@@ -150,19 +153,6 @@
           </logicalFolder>
         </logicalFolder>
       </logicalFolder>
-      <logicalFolder name="f3" displayName="zlib" projectFiles="true">
-        <itemPath>../src/third_party/zlib/zutil.h</itemPath>
-        <itemPath>../src/third_party/zlib/inftrees.h</itemPath>
-        <itemPath>../src/third_party/zlib/inffixed.h</itemPath>
-        <itemPath>../src/third_party/zlib/trees.h</itemPath>
-        <itemPath>../src/third_party/zlib/inffast.h</itemPath>
-        <itemPath>../src/third_party/zlib/deflate.h</itemPath>
-        <itemPath>../src/third_party/zlib/gzguts.h</itemPath>
-        <itemPath>../src/third_party/zlib/zlib.h</itemPath>
-        <itemPath>../src/third_party/zlib/inflate.h</itemPath>
-        <itemPath>../src/third_party/zlib/crc32.h</itemPath>
-        <itemPath>../src/third_party/zlib/zconf.h</itemPath>
-      </logicalFolder>
     </logicalFolder>
     <logicalFolder name="LinkerScript"
                    displayName="Linker Files"
@@ -214,6 +204,9 @@
                 <itemPath>../src/config/default/peripheral/sercom/spi_master/plib_sercom0_spi_master.c</itemPath>
               </logicalFolder>
             </logicalFolder>
+            <logicalFolder name="f12" displayName="systick" projectFiles="true">
+              <itemPath>../src/config/default/peripheral/systick/plib_systick.c</itemPath>
+            </logicalFolder>
             <logicalFolder name="f11" displayName="tc" projectFiles="true">
               <itemPath>../src/config/default/peripheral/tc/plib_tc3.c</itemPath>
             </logicalFolder>
@@ -233,27 +226,12 @@
                      projectFiles="true">
         <itemPath>../src/sht20-sensor-t-h/sht20-sensor-t-h.c</itemPath>
       </logicalFolder>
-      <logicalFolder name="f2" displayName="zlib" projectFiles="true">
-        <itemPath>../src/third_party/zlib/inflate.c</itemPath>
-        <itemPath>../src/third_party/zlib/compress.c</itemPath>
-        <itemPath>../src/third_party/zlib/deflate.c</itemPath>
-        <itemPath>../src/third_party/zlib/crc32.c</itemPath>
-        <itemPath>../src/third_party/zlib/infback.c</itemPath>
-        <itemPath>../src/third_party/zlib/zutil.c</itemPath>
-        <itemPath>../src/third_party/zlib/inftrees.c</itemPath>
-        <itemPath>../src/third_party/zlib/uncompr.c</itemPath>
-        <itemPath>../src/third_party/zlib/trees.c</itemPath>
-        <itemPath>../src/third_party/zlib/gzclose.c</itemPath>
-        <itemPath>../src/third_party/zlib/inffast.c</itemPath>
-        <itemPath>../src/third_party/zlib/adler32.c</itemPath>
-      </logicalFolder>
       <itemPath>../src/main.c</itemPath>
     </logicalFolder>
     <logicalFolder name="ExternalFiles"
                    displayName="Important Files"
                    projectFiles="false">
       <logicalFolder name="f1" displayName="default.mhc" projectFiles="true">
-        <itemPath>../src/config/default/default.mhc/lib_zlib.yml</itemPath>
         <itemPath>../src/config/default/default.mhc/core.yml</itemPath>
         <itemPath>../src/config/default/default.mhc/cmsis.yml</itemPath>
         <itemPath>../src/config/default/default.mhc/tc3.yml</itemPath>
@@ -315,6 +293,23 @@
                             FL="dist/default/production/sam-rtc-utils.X.a"
                             PD="dist/default/production/sam-rtc-utils.X."
                             DD="dist/default/debug/sam-rtc-utils.X.">
+              </makeArtifact>
+            </linkerLibProjectItem>
+            <linkerLibProjectItem>
+              <makeArtifact PL="../src/libraries/microchip-LoRa-semtech/microchip-LoRa-semtech.X"
+                            CT="3"
+                            CN="default"
+                            AC="true"
+                            BL="true"
+                            WD="../src/libraries/microchip-LoRa-semtech/microchip-LoRa-semtech.X"
+                            BC="${MAKE}  -f Makefile CONF=default"
+                            DBC="${MAKE}  -f Makefile CONF=default TYPE_IMAGE=DEBUG_RUN"
+                            CC="rm -rf &quot;build/default&quot; &quot;dist/default&quot;"
+                            OP="dist/default/production/microchip-LoRa-semtech.X.a"
+                            DOP="dist/default/debug/microchip-LoRa-semtech.X.a"
+                            FL="dist/default/production/microchip-LoRa-semtech.X.a"
+                            PD="dist/default/production/microchip-LoRa-semtech.X."
+                            DD="dist/default/debug/microchip-LoRa-semtech.X.">
               </makeArtifact>
             </linkerLibProjectItem>
           </linkerLibItems>
@@ -401,7 +396,7 @@
         <property key="enable-unroll-loops" value="false"/>
         <property key="exclude-floating-point" value="false"/>
         <property key="extra-include-directories"
-                  value="../src;../src/config/default;../src/packs/ATSAMD21E17D_DFP;../src/packs/CMSIS/;../src/packs/CMSIS/CMSIS/Core/Include;../src/third_party/zlib"/>
+                  value="../src;../src/config/default;../src/packs/ATSAMD21E17D_DFP;../src/packs/CMSIS/;../src/packs/CMSIS/CMSIS/Core/Include"/>
         <property key="generate-16-bit-code" value="false"/>
         <property key="generate-micro-compressed-code" value="false"/>
         <property key="isolate-each-function" value="true"/>

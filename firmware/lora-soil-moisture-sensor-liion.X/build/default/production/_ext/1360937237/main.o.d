@@ -77,6 +77,7 @@ build/default/production/_ext/1360937237/main.o: ../src/main.c \
  ../src/config/default/peripheral/port/plib_port.h \
  ../src/config/default/peripheral/clock/plib_clock.h \
  ../src/config/default/peripheral/nvic/plib_nvic.h \
+ ../src/config/default/peripheral/systick/plib_systick.h \
  ../src/config/default/peripheral/pm/plib_pm.h \
  ../src/config/default/peripheral/adc/plib_adc.h \
  ../src/config/default/peripheral/adc/plib_adc_common.h \
@@ -84,8 +85,10 @@ build/default/production/_ext/1360937237/main.o: ../src/main.c \
  ../src/config/default/peripheral/rtc/plib_rtc.h \
  ../src/config/default/peripheral/tc/plib_tc3.h \
  ../src/config/default/peripheral/tc/plib_tc_common.h \
+ ../src/config/default/peripheral/port/plib_port.h \
  ../src/sht20-sensor-t-h/sht20-sensor-t-h.h \
- ../src/libraries/sam-rtc-utils/sam-rtc-utils.X/sam-rtc-utils.h
+ ../src/libraries/sam-rtc-utils/sam-rtc-utils.X/sam-rtc-utils.h \
+ ../src/libraries/microchip-LoRa-semtech/src/LoRa.h
 
 ../src/config/default/definitions.h:
 
@@ -245,6 +248,8 @@ build/default/production/_ext/1360937237/main.o: ../src/main.c \
 
 ../src/config/default/peripheral/nvic/plib_nvic.h:
 
+../src/config/default/peripheral/systick/plib_systick.h:
+
 ../src/config/default/peripheral/pm/plib_pm.h:
 
 ../src/config/default/peripheral/adc/plib_adc.h:
@@ -259,6 +264,10 @@ build/default/production/_ext/1360937237/main.o: ../src/main.c \
 
 ../src/config/default/peripheral/tc/plib_tc_common.h:
 
+../src/config/default/peripheral/port/plib_port.h:
+
 ../src/sht20-sensor-t-h/sht20-sensor-t-h.h:
 
 ../src/libraries/sam-rtc-utils/sam-rtc-utils.X/sam-rtc-utils.h:
+
+../src/libraries/microchip-LoRa-semtech/src/LoRa.h:

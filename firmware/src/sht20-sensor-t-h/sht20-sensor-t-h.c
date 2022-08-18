@@ -20,7 +20,7 @@ float readSHT20TemperatureSync(void) {
     while(sht20_settings.I2C_IsBusy()) {};
 
     uint16_t rawT = ((uint16_t)sht20TemperatureData[0] << 8) + ((uint16_t)sht20TemperatureData[1] & 0xFC);
-    float T = -46.85 + 175.72 * rawT / 0x10000; // formula is taken from SHT20 datasheet
+    float T = -46.85 + 175.72 * rawT / 0x10000; // the formula is taken from SHT20 datasheet
 
     return T;
 };
@@ -32,7 +32,7 @@ float readSHT20RelativeHumiditySync(void) {
     while(sht20_settings.I2C_IsBusy()) {};
 
     uint16_t rawRH = ((uint16_t)sht20RelativeHumidityData[0] << 8) + ((uint16_t)sht20RelativeHumidityData[1] & 0xFC);
-    float RH = -6 + 125 * rawRH / 0x10000; // formula is taken from SHT20 datasheet
+    float RH = -6 + 125 * rawRH / 0x10000; // the formula is taken from SHT20 datasheet
 
     return RH;
 };

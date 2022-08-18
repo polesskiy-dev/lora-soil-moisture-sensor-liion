@@ -51,9 +51,13 @@ RANLIB=ranlib
 
 #install libraries
 .install:
-	@echo "Installing libraries"
-	@if [[ ! -d ../src/libraries ]]; then\
+	echo "Installing libraries";
+	if [[ ! -d ../src/libraries ]]; then\
 		git clone https://github.com/polesskiy-dev/sam-rtc-utils.git ../src/libraries/sam-rtc-utils;\
+		git clone https://github.com/polesskiy-dev/microchip-LoRa-semtech.git ../src/libraries/microchip-LoRa-semtech;\
+		echo "Libraries are installed"\
+	else\
+		echo "/src/libraries already exists, abort installing";\
 	fi
 
 # build

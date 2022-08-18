@@ -1,32 +1,4 @@
 files:
-- generatedChecksum: 35B0C341473ACB2438053A4CC8E2EF30
-  logicalPath: zlib
-  name: adler32.c
-  physicalPath: ../../third_party/zlib
-  security: NON_SECURE
-  type: SOURCE
-  userChecksum: 35B0C341473ACB2438053A4CC8E2EF30
-- generatedChecksum: B68AFB0124337AF812836EDC761A75ED
-  logicalPath: zlib
-  name: compress.c
-  physicalPath: ../../third_party/zlib
-  security: NON_SECURE
-  type: SOURCE
-  userChecksum: B68AFB0124337AF812836EDC761A75ED
-- generatedChecksum: 15329D0443C1063FE0677790C2E9701C
-  logicalPath: zlib
-  name: crc32.c
-  physicalPath: ../../third_party/zlib
-  security: NON_SECURE
-  type: SOURCE
-  userChecksum: 15329D0443C1063FE0677790C2E9701C
-- generatedChecksum: D6898B69213DE91213C87FB82AADD041
-  logicalPath: zlib
-  name: deflate.c
-  physicalPath: ../../third_party/zlib
-  security: NON_SECURE
-  type: SOURCE
-  userChecksum: D6898B69213DE91213C87FB82AADD041
 - generatedChecksum: E45D1648EFC10229D7BE94DB19221FF7
   logicalPath: config/default
   name: exceptions.c
@@ -34,48 +6,13 @@ files:
   security: NON_SECURE
   type: SOURCE
   userChecksum: E45D1648EFC10229D7BE94DB19221FF7
-- generatedChecksum: 6CAFC397A6C0451949D312C732E430E2
-  logicalPath: zlib
-  name: gzclose.c
-  physicalPath: ../../third_party/zlib
-  security: NON_SECURE
-  type: SOURCE
-  userChecksum: 6CAFC397A6C0451949D312C732E430E2
-- generatedChecksum: 860415970DD4FEC7F1F46B9BC5CAA327
-  logicalPath: zlib
-  name: infback.c
-  physicalPath: ../../third_party/zlib
-  security: NON_SECURE
-  type: SOURCE
-  userChecksum: 860415970DD4FEC7F1F46B9BC5CAA327
-- generatedChecksum: CC714A6EA8843A841503D50B0F5C43CF
-  logicalPath: zlib
-  name: inffast.c
-  physicalPath: ../../third_party/zlib
-  security: NON_SECURE
-  type: SOURCE
-  userChecksum: CC714A6EA8843A841503D50B0F5C43CF
-- generatedChecksum: 05571FE837D913392F7BFA96441DEA42
-  logicalPath: zlib
-  name: inflate.c
-  physicalPath: ../../third_party/zlib
-  security: NON_SECURE
-  type: SOURCE
-  userChecksum: 05571FE837D913392F7BFA96441DEA42
-- generatedChecksum: B68410FA195BDE150AF71287FE63656A
-  logicalPath: zlib
-  name: inftrees.c
-  physicalPath: ../../third_party/zlib
-  security: NON_SECURE
-  type: SOURCE
-  userChecksum: B68410FA195BDE150AF71287FE63656A
-- generatedChecksum: 9C8926F59E47C5C9FCF34D08E787084C
+- generatedChecksum: 2CC6110DB808416E23566DA09B8AB438
   logicalPath: config/default
   name: initialization.c
   physicalPath: ''
   security: NON_SECURE
   type: SOURCE
-  userChecksum: 9C8926F59E47C5C9FCF34D08E787084C
+  userChecksum: 2CC6110DB808416E23566DA09B8AB438
 - generatedChecksum: 5CAACEC37712B141C93401A1DEA271C1
   logicalPath: config/default
   name: interrupts.c
@@ -146,13 +83,13 @@ files:
   security: NON_SECURE
   type: SOURCE
   userChecksum: 40BE387D1DAD9A04BF4E79D9BB271213
-- generatedChecksum: 9CEDD7ACB96B071508AEA2E07D4F0D68
+- generatedChecksum: B5BC04CCBF50088EC96744ACDAC53E64
   logicalPath: config/default/peripheral/port
   name: plib_port.c
   physicalPath: peripheral/port
   security: NON_SECURE
   type: SOURCE
-  userChecksum: 9CEDD7ACB96B071508AEA2E07D4F0D68
+  userChecksum: B5BC04CCBF50088EC96744ACDAC53E64
 - generatedChecksum: 0F7125D5382EA7F7C53757E838491F12
   logicalPath: config/default/peripheral/rtc
   name: plib_rtc_clock.c
@@ -173,7 +110,14 @@ files:
   physicalPath: peripheral/sercom/i2c_master
   security: NON_SECURE
   type: SOURCE
-  userChecksum: C281F68756E30E8F39155ACD50BD8FEC
+  userChecksum: 8E5EB9B06DD1B76C26FE1AD0EF73C1EC
+- generatedChecksum: 709F5B9AEB4C84218754C3699BD84BC1
+  logicalPath: config/default/peripheral/systick
+  name: plib_systick.c
+  physicalPath: peripheral/systick
+  security: NON_SECURE
+  type: SOURCE
+  userChecksum: 709F5B9AEB4C84218754C3699BD84BC1
 - generatedChecksum: 704F0EA33019B7DC4A7EF80EC8608FD4
   logicalPath: config/default/peripheral/tc
   name: plib_tc3.c
@@ -188,20 +132,6 @@ files:
   security: NON_SECURE
   type: SOURCE
   userChecksum: 64C7B09EBF0E16AC27EFD31B52FDDDF8
-- generatedChecksum: A9825A0AAC7540D6E7ACF7A7C76F146A
-  logicalPath: zlib
-  name: trees.c
-  physicalPath: ../../third_party/zlib
-  security: NON_SECURE
-  type: SOURCE
-  userChecksum: A9825A0AAC7540D6E7ACF7A7C76F146A
-- generatedChecksum: 62611F88A299FD196042DC7F19D62829
-  logicalPath: zlib
-  name: uncompr.c
-  physicalPath: ../../third_party/zlib
-  security: NON_SECURE
-  type: SOURCE
-  userChecksum: 62611F88A299FD196042DC7F19D62829
 - generatedChecksum: 71352EF41F6688AD8408E42970B50B66
   logicalPath: config/default/stdio
   name: xc32_monitor.c
@@ -209,13 +139,6 @@ files:
   security: NON_SECURE
   type: SOURCE
   userChecksum: 71352EF41F6688AD8408E42970B50B66
-- generatedChecksum: E3CAC116522C57615A718653D5625861
-  logicalPath: zlib
-  name: zutil.c
-  physicalPath: ../../third_party/zlib
-  security: NON_SECURE
-  type: SOURCE
-  userChecksum: E3CAC116522C57615A718653D5625861
 - generatedChecksum: 6216C7A895EA39B17E58167FD761D02C
   logicalPath: packs/ATSAMD21E17D_DFP/component
   name: ac.h
@@ -307,13 +230,6 @@ files:
   security: NON_SECURE
   type: HEADER
   userChecksum: CCBD23918BE14943EA128B0D552031C5
-- generatedChecksum: F8E8369C029D0E4FFF1A4319D082AD0B
-  logicalPath: zlib
-  name: crc32.h
-  physicalPath: ../../third_party/zlib
-  security: NON_SECURE
-  type: HEADER
-  userChecksum: F8E8369C029D0E4FFF1A4319D082AD0B
 - generatedChecksum: F1BCA0D53BD35A1CCCAD7350C8FC2ACC
   logicalPath: packs/ATSAMD21E17D_DFP/component
   name: dac.h
@@ -328,20 +244,13 @@ files:
   security: NON_SECURE
   type: HEADER
   userChecksum: 95B6CAEC80B355A5796CDEF2D9EFCEAF
-- generatedChecksum: E38D014D3492D2FC80D1D7CAB37F1781
+- generatedChecksum: E16A0C7D9A035BB88DFB79DB70F53D6F
   logicalPath: config/default
   name: definitions.h
   physicalPath: ''
   security: NON_SECURE
   type: HEADER
-  userChecksum: E38D014D3492D2FC80D1D7CAB37F1781
-- generatedChecksum: B99354C34DA476BAE8670DEEEE3A61D2
-  logicalPath: zlib
-  name: deflate.h
-  physicalPath: ../../third_party/zlib
-  security: NON_SECURE
-  type: HEADER
-  userChecksum: B99354C34DA476BAE8670DEEEE3A61D2
+  userChecksum: E16A0C7D9A035BB88DFB79DB70F53D6F
 - generatedChecksum: 63774166367988C087306D74721D5A93
   logicalPath: config/default
   name: device.h
@@ -447,13 +356,6 @@ files:
   security: NON_SECURE
   type: HEADER
   userChecksum: 80BE0F46706245B0BF739E6BDFA7171E
-- generatedChecksum: 3319D6E69310B68435685DCEE13FE690
-  logicalPath: zlib
-  name: gzguts.h
-  physicalPath: ../../third_party/zlib
-  security: NON_SECURE
-  type: HEADER
-  userChecksum: 3319D6E69310B68435685DCEE13FE690
 - generatedChecksum: F85FC140F55F3E051DB258D02E58E70A
   logicalPath: packs/ATSAMD21E17D_DFP/component
   name: hmatrixb.h
@@ -475,34 +377,6 @@ files:
   security: NON_SECURE
   type: HEADER
   userChecksum: F6E238D8DFC0D881FD7D5F0901E5EF2F
-- generatedChecksum: 29F652423B766560C26EC8B784F995E2
-  logicalPath: zlib
-  name: inffast.h
-  physicalPath: ../../third_party/zlib
-  security: NON_SECURE
-  type: HEADER
-  userChecksum: 29F652423B766560C26EC8B784F995E2
-- generatedChecksum: BFAD0DE7201F1E06AE1FABE62BCE806C
-  logicalPath: zlib
-  name: inffixed.h
-  physicalPath: ../../third_party/zlib
-  security: NON_SECURE
-  type: HEADER
-  userChecksum: BFAD0DE7201F1E06AE1FABE62BCE806C
-- generatedChecksum: 55CDBEE9AA26B1E546DCE145A72D123C
-  logicalPath: zlib
-  name: inflate.h
-  physicalPath: ../../third_party/zlib
-  security: NON_SECURE
-  type: HEADER
-  userChecksum: 55CDBEE9AA26B1E546DCE145A72D123C
-- generatedChecksum: BFA6AA1B45F8DE69185DBAE2A51BF0CD
-  logicalPath: zlib
-  name: inftrees.h
-  physicalPath: ../../third_party/zlib
-  security: NON_SECURE
-  type: HEADER
-  userChecksum: BFA6AA1B45F8DE69185DBAE2A51BF0CD
 - generatedChecksum: 3A446F77FD3137AD90418299E96EE99D
   logicalPath: config/default
   name: interrupts.h
@@ -671,6 +545,13 @@ files:
   security: NON_SECURE
   type: HEADER
   userChecksum: BED7AF34A8D633C6994B780C19D7157F
+- generatedChecksum: 0801255BCCF9EEE6D8A6806FA6B37A6A
+  logicalPath: config/default/peripheral/systick
+  name: plib_systick.h
+  physicalPath: peripheral/systick
+  security: NON_SECURE
+  type: HEADER
+  userChecksum: 0801255BCCF9EEE6D8A6806FA6B37A6A
 - generatedChecksum: 81BFD57D170620FCDEA9BC052F1F7967
   logicalPath: config/default/peripheral/tc
   name: plib_tc3.h
@@ -909,13 +790,6 @@ files:
   security: NON_SECURE
   type: HEADER
   userChecksum: 5A6CE947CB477E5554790DE371B7FBAB
-- generatedChecksum: 8680E7EC08055823E55C5D71151E1776
-  logicalPath: zlib
-  name: trees.h
-  physicalPath: ../../third_party/zlib
-  security: NON_SECURE
-  type: HEADER
-  userChecksum: 8680E7EC08055823E55C5D71151E1776
 - generatedChecksum: B1EBD8018D73A475F043F2F70857D467
   logicalPath: packs/ATSAMD21E17D_DFP/component
   name: usb.h
@@ -944,27 +818,6 @@ files:
   security: NON_SECURE
   type: HEADER
   userChecksum: 76F3B3E3CD8CBE0E6C918EF5D7ACAED0
-- generatedChecksum: F3C0990BC1B41B1268F69029D08A77F0
-  logicalPath: zlib
-  name: zconf.h
-  physicalPath: ../../third_party/zlib
-  security: NON_SECURE
-  type: HEADER
-  userChecksum: F3C0990BC1B41B1268F69029D08A77F0
-- generatedChecksum: AA2D11BBD0FA17D6879CCE9871FF64E0
-  logicalPath: zlib
-  name: zlib.h
-  physicalPath: ../../third_party/zlib
-  security: NON_SECURE
-  type: HEADER
-  userChecksum: AA2D11BBD0FA17D6879CCE9871FF64E0
-- generatedChecksum: 101D7D726AC61A8109F5B453AB9B9B93
-  logicalPath: zlib
-  name: zutil.h
-  physicalPath: ../../third_party/zlib
-  security: NON_SECURE
-  type: HEADER
-  userChecksum: 101D7D726AC61A8109F5B453AB9B9B93
 - generatedChecksum: FFC5EE9D7BC0CBAFA677AF8CC942E093
   logicalPath: config/default
   name: ATSAMD21E17D.ld
@@ -972,22 +825,16 @@ files:
   security: NON_SECURE
   type: LINKER
   userChecksum: FFC5EE9D7BC0CBAFA677AF8CC942E093
-- generatedChecksum: B433D78E3E9A54C4C1BF824958752EFD
+- generatedChecksum: F43D0F43A385F746DF772B4F63A390A6
   logicalPath: ''
   name: pin_configurations.csv
   physicalPath: ''
   security: NON_SECURE
   type: IMPORTANT
-  userChecksum: B433D78E3E9A54C4C1BF824958752EFD
+  userChecksum: F43D0F43A385F746DF772B4F63A390A6
 format_version: v1.0
 libraries: []
 settings:
-- append: true
-  category: C32
-  delimiter: ;
-  key: extra-include-directories
-  security: NON_SECURE
-  value: ../src/third_party/zlib
 - append: true
   category: C32
   delimiter: ;
