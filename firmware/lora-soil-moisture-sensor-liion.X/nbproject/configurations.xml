@@ -279,29 +279,12 @@
         <linkerTool>
           <linkerLibItems>
             <linkerLibProjectItem>
-              <makeArtifact PL="../src/libraries/sam-rtc-utils/sam-rtc-utils.X"
+              <makeArtifact PL="../libraries/microchip-LoRa-semtech/microchip-LoRa-semtech.X"
                             CT="3"
                             CN="default"
                             AC="true"
                             BL="true"
-                            WD="../src/libraries/sam-rtc-utils/sam-rtc-utils.X"
-                            BC="${MAKE}  -f Makefile CONF=default"
-                            DBC="${MAKE}  -f Makefile CONF=default TYPE_IMAGE=DEBUG_RUN"
-                            CC="rm -rf &quot;build/default&quot; &quot;dist/default&quot;"
-                            OP="dist/default/production/sam-rtc-utils.X.a"
-                            DOP="dist/default/debug/sam-rtc-utils.X.a"
-                            FL="dist/default/production/sam-rtc-utils.X.a"
-                            PD="dist/default/production/sam-rtc-utils.X."
-                            DD="dist/default/debug/sam-rtc-utils.X.">
-              </makeArtifact>
-            </linkerLibProjectItem>
-            <linkerLibProjectItem>
-              <makeArtifact PL="../src/libraries/microchip-LoRa-semtech/microchip-LoRa-semtech.X"
-                            CT="3"
-                            CN="default"
-                            AC="true"
-                            BL="true"
-                            WD="../src/libraries/microchip-LoRa-semtech/microchip-LoRa-semtech.X"
+                            WD="../libraries/microchip-LoRa-semtech/microchip-LoRa-semtech.X"
                             BC="${MAKE}  -f Makefile CONF=default"
                             DBC="${MAKE}  -f Makefile CONF=default TYPE_IMAGE=DEBUG_RUN"
                             CC="rm -rf &quot;build/default&quot; &quot;dist/default&quot;"
@@ -310,6 +293,23 @@
                             FL="dist/default/production/microchip-LoRa-semtech.X.a"
                             PD="dist/default/production/microchip-LoRa-semtech.X."
                             DD="dist/default/debug/microchip-LoRa-semtech.X.">
+              </makeArtifact>
+            </linkerLibProjectItem>
+            <linkerLibProjectItem>
+              <makeArtifact PL="../libraries/sam-rtc-utils/sam-rtc-utils.X"
+                            CT="3"
+                            CN="default"
+                            AC="true"
+                            BL="true"
+                            WD="../libraries/sam-rtc-utils/sam-rtc-utils.X"
+                            BC="${MAKE}  -f Makefile CONF=default"
+                            DBC="${MAKE}  -f Makefile CONF=default TYPE_IMAGE=DEBUG_RUN"
+                            CC="rm -rf &quot;build/default&quot; &quot;dist/default&quot;"
+                            OP="dist/default/production/sam-rtc-utils.X.a"
+                            DOP="dist/default/debug/sam-rtc-utils.X.a"
+                            FL="dist/default/production/sam-rtc-utils.X.a"
+                            PD="dist/default/production/sam-rtc-utils.X."
+                            DD="dist/default/debug/sam-rtc-utils.X.">
               </makeArtifact>
             </linkerLibProjectItem>
           </linkerLibItems>

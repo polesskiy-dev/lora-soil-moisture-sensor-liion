@@ -31,8 +31,8 @@
 #include "definitions.h"                // SYS function prototypes
 #include "peripheral/port/plib_port.h"
 #include "sht20-sensor-t-h/sht20-sensor-t-h.h" // TODO check and convert to library
-#include "libraries/sam-rtc-utils/sam-rtc-utils.X/sam-rtc-utils.h"
-#include "libraries/microchip-LoRa-semtech/src/LoRa.h"
+#include "../libraries/sam-rtc-utils/sam-rtc-utils.X/sam-rtc-utils.h"
+#include "../libraries/microchip-LoRa-semtech/src/LoRa.h"
 
 #define DEBUG_BUF_SIZE                      256
 
@@ -40,7 +40,9 @@ void init(void);
 static void handleRTCAlarm(RTC_CLOCK_INT_MASK intCause, uintptr_t context);
 static void handleTC3PeriodInterrupt(TC_TIMER_STATUS intCause, uintptr_t context);
 static void i2cEventHandler(uintptr_t contextHandle);
-static void spiEventHandler(uintptr_t contextHandle);
+static bool SERCOM0_SPI_IsBusy(void);
+static bool SERCOM0_SPI_IsTransmitterBusy(void);
+//static void spiEventHandler(uintptr_t contextHandle);
 
 static volatile bool isRTCAlarm =               false;
 static volatile bool isTC3Interrupt =           false;
@@ -53,6 +55,7 @@ void _RESET_LoRa_Set(void);
 
 static float T = 0;
 static float RH = 0;
+static uint16_t counter = 0;
 
 #ifdef __DEBUG
     char debug_buf[2 * DEBUG_BUF_SIZE];
@@ -80,15 +83,27 @@ int main ( void )
         };
 
         if (isTC3Interrupt) {
-            STATUS_LED_Toggle();
+            STATUS_LED_Clear();
             isTC3Interrupt = false;
             // read temperature & humidity
             T = readSHT20TemperatureSync();
             RH = readSHT20RelativeHumiditySync();
 
+            // send LoRa packet
+            // send packet
+            LoRaBeginPacket(false);
+            char buf[16];
+            sprintf(buf+2, "hello %d\r\n", counter);
+            buf[0] = 0x00;
+            buf[1] = 0x14; // LoRa address        
+            LoRaWrite((uint8_t*)buf, strlen(buf) + 1);
+//            LoRaPrint(counter);
+            LoRaEndPacket(false);
+
             #ifdef __DEBUG
                 sprintf((debug_buf + (strlen(debug_buf) % DEBUG_BUF_SIZE)),"%.02f %.02f, ", T, RH);
             #endif
+            STATUS_LED_Set();
         };
     }
 
@@ -113,7 +128,6 @@ void init(void) {
             SERCOM0_SPI_Read,
             SERCOM0_SPI_IsBusy,
             SERCOM0_SPI_IsTransmitterBusy,
-
             _SS_CSN_LoRa_Clear,
             _SS_CSN_LoRa_Set,
             _RESET_LoRa_Clear,
@@ -125,7 +139,7 @@ void init(void) {
     RTC_RTCCCallbackRegister(handleRTCAlarm, 0);
     TC3_TimerCallbackRegister(handleTC3PeriodInterrupt, 0);
     SERCOM3_I2C_CallbackRegister(i2cEventHandler, 0);
-    SERCOM0_SPI_CallbackRegister( spiEventHandler, 0);
+//    SERCOM0_SPI_CallbackRegister(spiEventHandler, 0);
     // start timer
     TC3_Timer16bitPeriodSet(2 * 1024 * 10); // 10s: 2 ticks per ms * 1024 (ms in s) * 10 s
     TC3_TimerStart();
@@ -158,29 +172,17 @@ static void i2cEventHandler(uintptr_t contextHandle) {
     }
 };
 
-static void spiEventHandler(uintptr_t contextHandle) {
+// in SPI synchronous mode we don't need it
+static bool SERCOM0_SPI_IsBusy(void) {
+  return false;  
 };
 
-//void getCurTimeTm (struct tm* curTimeTm) {
-//    const char* curTime = __TIME__;
-//    const char* curDate = __DATE__;
-//    char month[4];
-//    
-//    #ifdef __DEBUG
-//        sprintf((debug_buf + (strlen(debug_buf) % DEBUG_BUF_SIZE)),"%s %s", curTime, curDate);
-//    #endif
-//
-//    const char *months[] = {"Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug",
-//                                 "Sep", "Oct", "Nov", "Dec"};
-//    sscanf(curDate,"%s %d %d",month,&curTimeTm->tm_mday,&curTimeTm->tm_year);
-//    curTimeTm->tm_year-=1900U;
-//    sscanf(curTime,"%d:%d:%d",&curTimeTm->tm_hour,&curTimeTm->tm_min,&curTimeTm->tm_sec);
-//
-//    for (uint8_t i = 0; i < 12; i++)
-//        if (!strcmp(month, months[i])) {
-//            curTimeTm->tm_mon = i;
-//            return;
-//        };
+// in SPI synchronous mode we don't need it
+static bool SERCOM0_SPI_IsTransmitterBusy(void) {
+    return false;
+};
+
+//static void spiEventHandler(uintptr_t contextHandle) {
 //};
 
 /*******************************************************************************

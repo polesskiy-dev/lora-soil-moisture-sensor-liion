@@ -188,6 +188,8 @@ children:
       children:
       - type: Dynamic
         attributes: {id: sercom0, value: 'true'}
+      - type: User
+        attributes: {value: 'false'}
   - type: Boolean
     attributes: {id: SPI_MSSEN}
     children:

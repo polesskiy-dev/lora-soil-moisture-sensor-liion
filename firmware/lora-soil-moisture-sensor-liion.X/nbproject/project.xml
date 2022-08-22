@@ -12,8 +12,8 @@
             <asminc-extensions/>
             <sourceEncoding>ISO-8859-1</sourceEncoding>
             <make-dep-projects>
-                <make-dep-project>../src/libraries/sam-rtc-utils/sam-rtc-utils.X</make-dep-project>
-                <make-dep-project>../src/libraries/microchip-LoRa-semtech/microchip-LoRa-semtech.X</make-dep-project>
+                <make-dep-project>../libraries/sam-rtc-utils/sam-rtc-utils.X</make-dep-project>
+                <make-dep-project>../libraries/microchip-LoRa-semtech/microchip-LoRa-semtech.X</make-dep-project>
             </make-dep-projects>
             <sourceRootList>
                 <sourceRootElem>../src</sourceRootElem>

@@ -774,21 +774,21 @@ children:
     - type: Values
       children:
       - type: Dynamic
-        attributes: {id: core, value: 'true'}
+        attributes: {id: core, value: 'false'}
   - type: String
     attributes: {id: NVIC_9_0_HANDLER}
     children:
     - type: Values
       children:
       - type: Dynamic
-        attributes: {id: core, value: SERCOM0_SPI_InterruptHandler}
+        attributes: {id: core, value: SERCOM0_Handler}
   - type: Boolean
     attributes: {id: NVIC_9_0_HANDLER_LOCK}
     children:
     - type: Values
       children:
       - type: Dynamic
-        attributes: {id: core, value: 'true'}
+        attributes: {id: core, value: 'false'}
   - type: Boolean
     attributes: {id: NVMCTRL_INTERRUPT_ENABLE}
     children:
@@ -1852,28 +1852,28 @@ children:
     - type: Values
       children:
       - type: Dynamic
-        attributes: {id: sercom0, value: 'true'}
+        attributes: {id: sercom0, value: 'false'}
   - type: Boolean
     attributes: {id: SERCOM0_INTERRUPT_ENABLE_UPDATE}
     children:
     - type: Values
       children:
       - type: Dynamic
-        attributes: {id: core, value: 'false'}
+        attributes: {id: core, value: 'true'}
   - type: String
     attributes: {id: SERCOM0_INTERRUPT_HANDLER}
     children:
     - type: Values
       children:
       - type: Dynamic
-        attributes: {id: sercom0, value: SERCOM0_SPI_InterruptHandler}
+        attributes: {id: sercom0, value: SERCOM0_Handler}
   - type: Boolean
     attributes: {id: SERCOM0_INTERRUPT_HANDLER_LOCK}
     children:
     - type: Values
       children:
       - type: Dynamic
-        attributes: {id: sercom0, value: 'true'}
+        attributes: {id: sercom0, value: 'false'}
   - type: Boolean
     attributes: {id: SERCOM3_CORE_CLOCK_ENABLE}
     children:
@@ -2080,12 +2080,6 @@ children:
   - type: Boolean
     attributes: {id: USE_SYSTICK_INTERRUPT}
     children:
-    - type: Attributes
-      children:
-      - type: Boolean
-        attributes: {id: readOnly}
-        children:
-        - {type: Value, value: 'false'}
     - type: Values
       children:
       - type: Dynamic

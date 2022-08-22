@@ -87,8 +87,8 @@ build/default/production/_ext/1360937237/main.o: ../src/main.c \
  ../src/config/default/peripheral/tc/plib_tc_common.h \
  ../src/config/default/peripheral/port/plib_port.h \
  ../src/sht20-sensor-t-h/sht20-sensor-t-h.h \
- ../src/libraries/sam-rtc-utils/sam-rtc-utils.X/sam-rtc-utils.h \
- ../src/libraries/microchip-LoRa-semtech/src/LoRa.h
+ ../src/../libraries/sam-rtc-utils/sam-rtc-utils.X/sam-rtc-utils.h \
+ ../src/../libraries/microchip-LoRa-semtech/src/LoRa.h
 
 ../src/config/default/definitions.h:
 
@@ -268,6 +268,6 @@ build/default/production/_ext/1360937237/main.o: ../src/main.c \
 
 ../src/sht20-sensor-t-h/sht20-sensor-t-h.h:
 
-../src/libraries/sam-rtc-utils/sam-rtc-utils.X/sam-rtc-utils.h:
+../src/../libraries/sam-rtc-utils/sam-rtc-utils.X/sam-rtc-utils.h:
 
-../src/libraries/microchip-LoRa-semtech/src/LoRa.h:
+../src/../libraries/microchip-LoRa-semtech/src/LoRa.h:
