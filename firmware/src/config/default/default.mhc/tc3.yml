@@ -1,0 +1,134 @@
+format_version: v1.0
+type: UniqueComponent
+attributes: {id: tc3}
+children:
+- type: Symbols
+  children:
+  - type: File
+    attributes: {id: TC_CAPTURE_HEADER}
+    children:
+    - type: Attributes
+      children:
+      - type: Boolean
+        attributes: {id: enabled}
+        children:
+        - {type: Value, value: 'false'}
+  - type: File
+    attributes: {id: TC_CAPTURE_SOURCE}
+    children:
+    - type: Attributes
+      children:
+      - type: Boolean
+        attributes: {id: enabled}
+        children:
+        - {type: Value, value: 'false'}
+  - type: File
+    attributes: {id: TC_COMPARE_HEADER}
+    children:
+    - type: Attributes
+      children:
+      - type: Boolean
+        attributes: {id: enabled}
+        children:
+        - {type: Value, value: 'false'}
+  - type: Comment
+    attributes: {id: TC_COMPARE_PERIOD_COMMENT}
+    children:
+    - type: Attributes
+      children:
+      - type: String
+        attributes: {id: text}
+        children:
+        - {type: Value, value: '**** Compare Period is 11718.75 us ****'}
+  - type: File
+    attributes: {id: TC_COMPARE_SOURCE}
+    children:
+    - type: Attributes
+      children:
+      - type: Boolean
+        attributes: {id: enabled}
+        children:
+        - {type: Value, value: 'false'}
+  - type: KeyValueSet
+    attributes: {id: TC_CTRLA_PRESCALER}
+    children:
+    - type: Values
+      children:
+      - type: User
+        attributes: {value: '4'}
+  - type: Integer
+    attributes: {id: TC_FREQUENCY}
+    children:
+    - type: Values
+      children:
+      - type: Dynamic
+        attributes: {id: tc3, value: '2048'}
+  - type: Combo
+    attributes: {id: TC_OPERATION_MODE}
+    children:
+    - type: Values
+      children:
+      - type: User
+        attributes: {value: Timer}
+  - type: Comment
+    attributes: {id: TC_Resolution}
+    children:
+    - type: Attributes
+      children:
+      - type: String
+        attributes: {id: text}
+        children:
+        - {type: Value, value: '****Timer resolution is 488281.25 nS****'}
+  - type: File
+    attributes: {id: TC_TIMER_HEADER}
+    children:
+    - type: Attributes
+      children:
+      - type: Boolean
+        attributes: {id: enabled}
+        children:
+        - {type: Value, value: 'true'}
+  - type: Long
+    attributes: {id: TC_TIMER_PERIOD}
+    children:
+    - type: Attributes
+      children:
+      - type: Long
+        attributes: {id: max}
+        children:
+        - {type: Value, value: '65535'}
+    - type: Values
+      children:
+      - type: Dynamic
+        attributes: {id: tc3, value: '2'}
+  - type: File
+    attributes: {id: TC_TIMER_SOURCE}
+    children:
+    - type: Attributes
+      children:
+      - type: Boolean
+        attributes: {id: enabled}
+        children:
+        - {type: Value, value: 'true'}
+  - type: Float
+    attributes: {id: TC_TIMER_TIME_MS}
+    children:
+    - type: Attributes
+      children:
+      - type: Float
+        attributes: {id: max}
+        children:
+        - {type: Value, value: '32000.0'}
+    - type: Values
+      children:
+      - type: User
+        attributes: {value: '1.0'}
+  - type: Combo
+    attributes: {id: TC_TIMER_UNIT}
+    children:
+    - type: Values
+      children:
+      - type: User
+        attributes: {value: millisecond}
+- type: ElementPosition
+  attributes: {x: '370', y: '100', id: tc3}

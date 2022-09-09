@@ -270,8 +270,8 @@
         <platform>4</platform>
       </toolsSet>
       <packs>
-        <pack name="SAMD21_DFP" vendor="Microchip" version="3.6.144"/>
         <pack name="CMSIS" vendor="ARM" version="5.4.0"/>
+        <pack name="SAMD21_DFP" vendor="Microchip" version="3.6.144"/>
       </packs>
       <ScriptingSettings>
       </ScriptingSettings>
@@ -400,7 +400,7 @@
         <property key="generate-16-bit-code" value="false"/>
         <property key="generate-micro-compressed-code" value="false"/>
         <property key="isolate-each-function" value="true"/>
-        <property key="make-warnings-into-errors" value="true"/>
+        <property key="make-warnings-into-errors" value="false"/>
         <property key="optimization-level" value=""/>
         <property key="place-data-into-section" value="true"/>
         <property key="post-instruction-scheduling" value="default"/>
@@ -1111,6 +1111,8 @@
         <property key="periphComp5.gte" value="gt"/>
         <property key="periphComp6.gte" value="gt"/>
         <property key="poweroptions.powerenable" value="false"/>
+        <property key="programmerToGoFilePath"
+                  value="/Users/apolisskyi/projects/lora-soil-moisture-sensor-liion/firmware/lora-soil-moisture-sensor-liion.X/debug/default/lora-soil-moisture-sensor-liion_ptg"/>
         <property key="programoptions.eraseb4program" value="false"/>
         <property key="programoptions.preservedataflash" value="false"/>
         <property key="programoptions.preservedataflash.ranges"

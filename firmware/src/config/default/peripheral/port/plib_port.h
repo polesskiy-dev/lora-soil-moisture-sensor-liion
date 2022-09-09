@@ -117,9 +117,9 @@
 #define RESET_LoRa_Get()               (((PORT_REGS->GROUP[0].PORT_IN >> 18U)) & 0x01U)
 #define RESET_LoRa_PIN                  PORT_PIN_PA18
 
-/*** Macros for IRQ_LoRa pin ***/
-#define IRQ_LoRa_Get()               (((PORT_REGS->GROUP[0].PORT_IN >> 19U)) & 0x01U)
-#define IRQ_LoRa_PIN                  PORT_PIN_PA19
+/*** Macros for IRQ_LORA_DIO0 pin ***/
+#define IRQ_LORA_DIO0_Get()               (((PORT_REGS->GROUP[0].PORT_IN >> 19U)) & 0x01U)
+#define IRQ_LORA_DIO0_PIN                  PORT_PIN_PA19
 
 /*** Macros for SDA pin ***/
 #define SDA_Get()               (((PORT_REGS->GROUP[0].PORT_IN >> 22U)) & 0x01U)

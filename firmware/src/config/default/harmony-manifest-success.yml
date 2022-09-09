@@ -4,7 +4,7 @@
 
 
 project: lora-soil-moisture-sensor-liion
-creation_date: 2022-08-19T22:23:33.978+03:00[Europe/Kiev]    # ISO 8601 format: https://www.w3.org/TR/NOTE-datetime
+creation_date: 2022-09-09T01:02:22.477+03:00[Europe/Kiev]    # ISO 8601 format: https://www.w3.org/TR/NOTE-datetime
 operating_system: Mac OS X
 mhc_mode: IDE            # [IDE|Standalone|Headless]
 mhc_version: v3.8.5

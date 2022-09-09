@@ -30,13 +30,15 @@
 #include <string.h>
 #include "definitions.h"                // SYS function prototypes
 #include "peripheral/port/plib_port.h"
+
 #include "sht20-sensor-t-h/sht20-sensor-t-h.h" // TODO check and convert to library
 #include "../libraries/sam-rtc-utils/sam-rtc-utils.X/sam-rtc-utils.h"
 #include "../libraries/microchip-LoRa-semtech/src/LoRa.h"
 
-#define DEBUG_BUF_SIZE                      256
+#define DEBUG_BUF_SIZE                      512
 
 void init(void);
+static void onLoRaReceive(uint32_t packetSize);
 static void handleRTCAlarm(RTC_CLOCK_INT_MASK intCause, uintptr_t context);
 static void handleTC3PeriodInterrupt(TC_TIMER_STATUS intCause, uintptr_t context);
 static void i2cEventHandler(uintptr_t contextHandle);
@@ -55,7 +57,6 @@ void _RESET_LoRa_Set(void);
 
 static float T = 0;
 static float RH = 0;
-static uint16_t counter = 0;
 
 #ifdef __DEBUG
     char debug_buf[2 * DEBUG_BUF_SIZE];
@@ -91,14 +92,14 @@ int main ( void )
 
             // send LoRa packet
             // send packet
-            LoRaBeginPacket(false);
-            char buf[16];
-            sprintf(buf+2, "hello %d\r\n", counter);
-            buf[0] = 0x00;
-            buf[1] = 0x14; // LoRa address        
-            LoRaWrite((uint8_t*)buf, strlen(buf) + 1);
+//            LoRaBeginPacket(false);
+//            char buf[16];
+//            sprintf(buf+2, "hello %d\r\n", counter);
+//            buf[0] = 0x00;
+//            buf[1] = 0x14; // LoRa address        
+//            LoRaWrite((uint8_t*)buf, strlen(buf) + 1);
 //            LoRaPrint(counter);
-            LoRaEndPacket(false);
+//            LoRaEndPacket(false);
 
             #ifdef __DEBUG
                 sprintf((debug_buf + (strlen(debug_buf) % DEBUG_BUF_SIZE)),"%.02f %.02f, ", T, RH);
@@ -134,12 +135,14 @@ void init(void) {
             _RESET_LoRa_Set,
             SYSTICK_DelayMs
             );
-    LoRaBegin(434000000);
+    LoRaSetOnReceive(onLoRaReceive);
+    LoRaBegin(434E6);
     // register interrupt callbacks
+    EIC_CallbackRegister(EIC_PIN_3, LoRaHandleDio0Rise, 0); // LoRa DIO0 Rise
     RTC_RTCCCallbackRegister(handleRTCAlarm, 0);
     TC3_TimerCallbackRegister(handleTC3PeriodInterrupt, 0);
     SERCOM3_I2C_CallbackRegister(i2cEventHandler, 0);
-//    SERCOM0_SPI_CallbackRegister(spiEventHandler, 0);
+    // SERCOM0_SPI_CallbackRegister(spiEventHandler, 0);
     // start timer
     TC3_Timer16bitPeriodSet(2 * 1024 * 10); // 10s: 2 ticks per ms * 1024 (ms in s) * 10 s
     TC3_TimerStart();
@@ -154,6 +157,54 @@ void _SS_CSN_LoRa_Set(void) {SS_CSN_LoRa_Set();};
 void _RESET_LoRa_Clear(void) {RESET_LoRa_Clear();};
 void _RESET_LoRa_Set(void) {RESET_LoRa_Set();};
 
+static void onLoRaReceive(uint32_t packetSize) {
+    if (packetSize == 0) return;          // if there's no packet, return
+
+    // read packet header bytes:
+    uint8_t recipient = LoRaRead();          // recipient address
+    uint8_t sender = LoRaRead();            // sender address
+    uint8_t incomingMsgId = LoRaRead();     // incoming msg ID
+    uint8_t incomingLength = LoRaRead();    // incoming msg length
+
+    char incoming[64] = "";                 // payload of packet
+
+    while (LoRaAvailable()) {
+        char ch = (char)LoRaRead();
+        strncat(incoming, &ch, 1);    // can't use readString() in callback, so add bytes one by one
+    };
+
+    if (incomingLength != strlen(incoming)) {   // check length for error
+        #ifdef __DEBUG
+                sprintf((debug_buf + (strlen(debug_buf) % DEBUG_BUF_SIZE)),"%s", "error: message length does not match length");
+        #endif
+        return;                             // skip rest of function
+    }
+
+    // if the recipient isn't this device or broadcast,
+//    if (recipient != localAddress && recipient != 0xFF) {
+//        Serial.println("This message is not for me.");
+//        return;                             // skip rest of function
+//    }
+
+    // if message is for this device, or broadcast, print details:
+    #ifdef __DEBUG
+        sprintf((debug_buf + (strlen(debug_buf) % DEBUG_BUF_SIZE)),
+                "%s %04x %s %d %s %d %s %s %s %ul %s %ul \r\n",
+                "Received from:",
+                sender,
+                "Message ID:",
+                incomingMsgId,
+                "Message length:",
+                incomingLength,
+                "Message:",
+                incoming,
+                "RSSI:",
+                LoRaPacketRssi(),
+                "Snr:",
+                LoRaPacketSnr()
+                );
+    #endif
+};
 
 static void handleRTCAlarm(RTC_CLOCK_INT_MASK intCause, uintptr_t context) {
     if (intCause == RTC_CLOCK_INT_MASK_ALARM) {

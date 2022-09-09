@@ -61,6 +61,7 @@ void Reset_Handler (void);
 void NonMaskableInt_Handler (void);
 void HardFault_Handler (void);
 void RTC_InterruptHandler (void);
+void EIC_InterruptHandler (void);
 void SERCOM3_I2C_InterruptHandler (void);
 void TC3_TimerInterruptHandler (void);
 
